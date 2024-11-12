@@ -19,9 +19,9 @@ pipeline {
         }
         stage("reports"){
             steps{
-                "coverage report"
-                "coverage html"
-                "coverage xml"
+                sh "coverage report"
+                sh "coverage html"
+                sh "coverage xml"
             }
         }
     }
