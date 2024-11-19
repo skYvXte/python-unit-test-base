@@ -27,8 +27,9 @@ pipeline {
     }
     post {
         success {
-            discoverReferenceBuild()
-            recordCoverage(tools: [[parser: 'Cobertura']])
+            recordCoverage(tools: [[parser: 'COBERTURA']],
+                id: 'cobertura', name: 'Cobertura Coverage',
+                sourceCodeRetention: 'EVERY_BUILD')
         }
     }
 }
