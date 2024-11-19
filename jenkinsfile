@@ -28,6 +28,9 @@ pipeline {
     post {
         success {
             archiveArtifacts 'htmlcov/*'
+            recordCoverage(tools: [[parser: 'Cobertura']],
+                id: 'Cobertura', name: 'Cobertura Coverage',
+                sourceCodeRetention: 'EVERY_BUILD')
         }
     }
 }
